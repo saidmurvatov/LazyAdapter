@@ -16,15 +16,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val llm = LinearLayoutManager(this)
-        llm.orientation = LinearLayoutManager.VERTICAL
+        val linearLayoutManager = LinearLayoutManager(this)
+        linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
 
-
-
-
-        lazyRecyclerView.layoutManager = llm
+        lazyRecyclerView.layoutManager = linearLayoutManager
         lazyRecyclerView.adapter = lazyAdapter
 
-        addNext.setOnClickListener { lazyTwoStrings.add(TwoLazyStrings("${lazyAdapter.itemCount}", "this is ${lazyAdapter.itemCount} item")); lazyAdapter.notifyDataSetChanged() }
+        addNext.setOnClickListener {
+            lazyTwoStrings.add(TwoLazyStrings("${lazyAdapter.itemCount}", "this is ${lazyAdapter.itemCount} item"))
+            lazyAdapter.notifyDataSetChanged()
+        }
     }
 }

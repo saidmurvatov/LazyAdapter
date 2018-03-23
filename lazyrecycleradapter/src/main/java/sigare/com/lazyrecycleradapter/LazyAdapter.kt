@@ -11,14 +11,11 @@ import android.view.ViewGroup
 
 
 /**
- * Created by Said Murvatov on 23.03.2018.
- */
-/**
- * Created by Said Murvatov on 8.01.2018.
- */
+* Created by Said Murvatov on 23.03.2018.
+*/
 
 class LazyAdapter(private val model: ArrayList<LazyModel>, private val layout: Int): RecyclerView.Adapter<LazyAdapter.ViewHolder>() {
-
+    val EXCEPTION = "Parent ViewGroup is null, make sure you are passing correct layout."
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
         holder?.bind(model[position])
@@ -29,8 +26,9 @@ class LazyAdapter(private val model: ArrayList<LazyModel>, private val layout: I
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
-        val view = parent?.inflate()
-        return ViewHolder(view!!)
+        val view = parent?.inflate() ?: throw Exception(EXCEPTION)
+
+        return ViewHolder(view)
     }
 
     class ViewHolder(private var binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {

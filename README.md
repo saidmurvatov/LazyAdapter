@@ -1,8 +1,8 @@
 # LazyAdapter
 
-Lazy Adapter is RecyclerView Adapter which gives you the posibility to do not think about creating and managing adapter.
+Lazy Adapter is RecyclerView adapter which gives you the posibility to do not care about creating and managing adapter.
 
-the only thing you need is to create your own data class and layout.
+The only thing you need is to create your own data class and layout.
 
 # Very Important Notice
 
@@ -17,6 +17,9 @@ the only thing you need is to create your own data class and layout.
         enabled = true
     }`
 
+This is just the first version of it and many changes should and will be done. The code is not clean and pretty looking.
+
+You can find a sample in app folder MainActivity.
  ### Library is written in API >= 14 in Kotlin.
 
 
